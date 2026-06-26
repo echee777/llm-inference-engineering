@@ -63,17 +63,15 @@ and the data tables they produced are kept.
 
 ## Worth reading first
 
-```
-Capacity and memory model    study/phase-a/week1-deliverable-gpu-architecture-memory-budget.md
-vLLM internals, annotated    study/phase-a/week2-deliverable-annotated-architecture.md
-Quantization tradeoff memo   study/phase-a/day15/day15-tradeoff-analysis.md
-Admission control design     study/phase-a/day19/design-note.md
-Prefill/decode interference  study/phase-b/day23/deliverable-6-prefill-decode-interference.md
-The latency cliff            study/phase-b/day24/deliverable-7-cliff.md
-Postmortem: KV exhaustion    study/phase-b/day22/postmortem-1.md
-Postmortem: retry cascade    study/phase-b/day27/deliverable-8-postmortem-retry-cascade.md
-Autoscaling policy           study/phase-b/day29/deliverable_09_autoscaling_memo_v1.md
-```
+- [Capacity and memory model](study/phase-a/week1-deliverable-gpu-architecture-memory-budget.md)
+- [vLLM internals, annotated](study/phase-a/week2-deliverable-annotated-architecture.md)
+- [Quantization tradeoff memo](study/phase-a/day15/day15-tradeoff-analysis.md)
+- [Admission control design](study/phase-a/day19/design-note.md)
+- [Prefill/decode interference](study/phase-b/day23/deliverable-6-prefill-decode-interference.md)
+- [The latency cliff](study/phase-b/day24/deliverable-7-cliff.md)
+- [Postmortem: KV exhaustion](study/phase-b/day22/postmortem-1.md)
+- [Postmortem: retry cascade](study/phase-b/day27/deliverable-8-postmortem-retry-cascade.md)
+- [Autoscaling policy](study/phase-b/day29/deliverable_09_autoscaling_memo_v1.md)
 
 Two artifacts I would point to specifically:
 
