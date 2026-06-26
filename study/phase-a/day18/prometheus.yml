@@ -1,0 +1,46 @@
+# prometheus.yml — Prometheus scrape configuration for Day 18
+#
+# Prometheus is a time-series database that PULLS metrics from your services
+# (called "scraping"). Every scrape_interval (5 seconds), Prometheus sends
+# an HTTP GET to each target's metrics endpoint and stores the response.
+#
+# This config tells Prometheus to scrape two targets:
+#   1. The gateway (port 8001) — our admission control proxy
+#   2. vLLM (port 8000) — the model server
+#
+# After scraping, you query this data with PromQL in Grafana dashboards.
+
+global:
+  # How often Prometheus fetches metrics from each target.
+  # 5s is aggressive but appropriate for load testing where we want
+  # near-real-time visibility. In production, 15-30s is more common
+  # to reduce overhead.
+  scrape_interval: 5s
+
+scrape_configs:
+  # --- Gateway metrics ---
+  # The gateway exposes Prometheus-format metrics at /prom (not /metrics,
+  # to avoid confusion with vLLM's /metrics endpoint).
+  # These include: gateway_requests_total, gateway_ttft_seconds,
+  # model_ttft_seconds, gateway_queue_wait_seconds, gateway_queue_depth,
+  # gateway_token_budget_used_pct.
+  - job_name: 'gateway'
+    static_configs:
+      - targets: ['localhost:8001']
+    # Custom path because our gateway mounts Prometheus at /prom.
+    # Default would be /metrics if we didn't specify this.
+    metrics_path: '/prom/'
+
+  # --- vLLM metrics ---
+  # vLLM exposes Prometheus metrics natively at /metrics when started
+  # with the --enable-metrics flag. Key metrics:
+  #   vllm:gpu_cache_usage_perc — KV cache pool utilization (0.0 to 1.0)
+  #   vllm:num_preemptions_total — cumulative preemption count
+  #   vllm:time_to_first_token_seconds — vLLM's internal TTFT histogram
+  #   vllm:request_success_total — completed request count
+  # We use vllm:gpu_cache_usage_perc on Dashboard Panel 3 to validate
+  # that our token budget estimate tracks actual GPU memory usage.
+  - job_name: 'vllm'
+    static_configs:
+      - targets: ['localhost:8000']
+    # vLLM uses the default /metrics path, so no metrics_path override needed.

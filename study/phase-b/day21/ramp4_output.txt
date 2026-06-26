@@ -1,0 +1,125 @@
+
+=== STEP 4: RAMP TO FAILURE (2048-token prompts, max_new=512) ===
+
+  Prompt length (chars): 2229
+  Actual prompt tokens: 2258
+
+--- Concurrency = 1 ---
+  [c=1] warming up 10s...
+  [c=1] t=5s running=1 waiting=0 kv=3.2% preempt=0
+  [c=1] t=10s running=1 waiting=0 kv=3.3% preempt=0
+  [c=1] t=15s running=1 waiting=0 kv=3.2% preempt=0
+  [c=1] t=20s running=1 waiting=0 kv=3.3% preempt=0
+  [c=1] t=25s running=1 waiting=0 kv=3.4% preempt=0
+  [c=1] t=30s running=1 waiting=0 kv=3.2% preempt=0
+  [c=1] t=35s running=1 waiting=0 kv=3.3% preempt=0
+  [c=1] t=40s running=1 waiting=0 kv=3.4% preempt=0
+  [c=1] t=45s running=1 waiting=0 kv=3.2% preempt=0
+  [c=1] t=50s running=1 waiting=0 kv=3.2% preempt=0
+  [c=1] t=55s running=1 waiting=0 kv=3.3% preempt=0
+  [c=1] t=60s running=1 waiting=0 kv=3.1% preempt=0
+  KV util:       3.3%
+  Queue depth:   0
+  Running:       1
+  Eff conc:      1
+  TTFT p50:      153.0 ms
+  TTFT p99:      156.9 ms
+  Div ratio:     1.03
+  Throughput:    34.0 tok/s
+  Preemptions:   0
+  Event:         healthy
+  Completed:     33
+  Errors:        0
+
+--- Concurrency = 2 ---
+  [c=2] warming up 10s...
+  [c=2] t=5s running=2 waiting=0 kv=6.6% preempt=0
+  [c=2] t=10s running=1 waiting=0 kv=3.1% preempt=0
+  [c=2] t=15s running=2 waiting=0 kv=6.6% preempt=0
+  [c=2] t=20s running=2 waiting=0 kv=6.9% preempt=0
+  [c=2] t=25s running=2 waiting=0 kv=6.7% preempt=0
+  [c=2] t=30s running=2 waiting=0 kv=6.6% preempt=0
+  [c=2] t=35s running=2 waiting=0 kv=6.4% preempt=0
+  [c=2] t=40s running=2 waiting=0 kv=6.7% preempt=0
+  [c=2] t=45s running=2 waiting=0 kv=7.0% preempt=0
+  [c=2] t=50s running=2 waiting=0 kv=6.5% preempt=0
+  [c=2] t=55s running=2 waiting=0 kv=6.4% preempt=0
+  [c=2] t=60s running=2 waiting=0 kv=6.7% preempt=0
+  KV util:       6.3%
+  Queue depth:   0
+  Running:       1
+  Eff conc:      1
+  TTFT p50:      187.4 ms
+  TTFT p99:      293.5 ms
+  Div ratio:     1.57
+  Throughput:    59.1 tok/s
+  Preemptions:   0
+  Event:         healthy
+  Completed:     54
+  Errors:        0
+
+--- Concurrency = 4 ---
+  [c=4] warming up 10s...
+  [c=4] t=5s running=3 waiting=0 kv=10.6% preempt=0
+  [c=4] t=10s running=4 waiting=0 kv=15.0% preempt=0
+  [c=4] t=15s running=4 waiting=0 kv=16.1% preempt=0
+  [c=4] t=20s running=4 waiting=0 kv=16.3% preempt=0
+  [c=4] t=25s running=4 waiting=0 kv=13.1% preempt=0
+  [c=4] t=30s running=4 waiting=0 kv=13.8% preempt=0
+  [c=4] t=35s running=4 waiting=0 kv=13.1% preempt=0
+  [c=4] t=40s running=4 waiting=0 kv=13.9% preempt=0
+  [c=4] t=45s running=4 waiting=0 kv=13.1% preempt=0
+  [c=4] t=50s running=4 waiting=0 kv=13.4% preempt=0
+  [c=4] t=55s running=4 waiting=0 kv=13.1% preempt=0
+  [c=4] t=60s running=4 waiting=0 kv=13.2% preempt=0
+  KV util:       13.7%
+  Queue depth:   0
+  Running:       3
+  Eff conc:      3
+  TTFT p50:      185.4 ms
+  TTFT p99:      307.9 ms
+  Div ratio:     1.66
+  Throughput:    109.9 tok/s
+  Preemptions:   0
+  Event:         healthy
+  Completed:     90
+  Errors:        0
+
+--- Concurrency = 6 ---
+  [c=6] warming up 10s...
+  [c=6] t=5s running=6 waiting=0 kv=20.0% preempt=0
+  [c=6] t=10s running=6 waiting=0 kv=20.0% preempt=0
+  [c=6] t=15s running=6 waiting=0 kv=20.2% preempt=0
+  [c=6] t=20s running=6 waiting=0 kv=21.4% preempt=0
+  [c=6] t=25s running=6 waiting=0 kv=21.9% preempt=0
+  [c=6] t=30s running=4 waiting=0 kv=16.8% preempt=0
+  [c=6] t=35s running=4 waiting=0 kv=13.5% preempt=0
+  [c=6] t=40s running=6 waiting=0 kv=19.8% preempt=0
+  [c=6] t=45s running=6 waiting=0 kv=19.8% preempt=0
+  [c=6] t=50s running=6 waiting=0 kv=20.3% preempt=0
+  [c=6] t=55s running=6 waiting=0 kv=19.6% preempt=0
+  [c=6] t=60s running=6 waiting=0 kv=19.5% preempt=0
+  KV util:       19.4%
+  Queue depth:   0
+  Running:       5
+  Eff conc:      5
+  TTFT p50:      185.2 ms
+  TTFT p99:      401.4 ms
+  Div ratio:     2.17
+  Throughput:    148.7 tok/s
+  Preemptions:   0
+  Event:         cliff onset
+  Completed:     128
+  Errors:        0
+
+--- Concurrency = 8 ---
+  [c=8] warming up 10s...
+  [c=8] t=5s running=8 waiting=0 kv=26.7% preempt=0
+  [c=8] t=10s running=8 waiting=0 kv=26.0% preempt=0
+  [c=8] t=15s running=8 waiting=0 kv=26.2% preempt=0
+  [c=8] t=20s running=8 waiting=0 kv=26.5% preempt=0
+  [c=8] t=25s running=8 waiting=0 kv=25.4% preempt=0
+  [c=8] t=30s running=8 waiting=0 kv=26.5% preempt=0
+  [c=8] t=35s running=7 waiting=0 kv=23.4% preempt=0
+  [c=8] t=40s running=8 waiting=0 kv=26.8% preempt=0
+  [c=8] t=45s running=7 waiting=0 kv=22.7% preempt=0

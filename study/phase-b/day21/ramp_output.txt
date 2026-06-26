@@ -1,0 +1,14 @@
+
+=== STEP 4: RAMP TO FAILURE (2048-token prompts, max_new=512) ===
+
+  Prompt length (chars): 2229
+  Actual prompt tokens: 2258
+
+--- Concurrency = 1 ---
+  [c=1] warming up 10s...
+  [c=1] t=5s running=1 waiting=0 kv=1.1% preempt=0
+  [c=1] t=10s running=1 waiting=0 kv=1.0% preempt=0
+  [c=1] t=15s running=1 waiting=0 kv=1.1% preempt=0
+  [c=1] t=20s running=1 waiting=0 kv=1.1% preempt=0
+  [c=1] t=25s running=1 waiting=0 kv=1.1% preempt=0
+  [c=1] t=30s running=1 waiting=0 kv=1.1% preempt=0

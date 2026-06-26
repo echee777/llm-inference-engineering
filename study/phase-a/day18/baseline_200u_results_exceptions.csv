@@ -1,0 +1,16 @@
+Count,Message,Traceback,Nodes
+34803,Response ended prematurely,"  File ""/home/ssm-user/venv-locust/lib64/python3.12/site-packages/locust/user/task.py"", line 362, in run
+    self.execute_next_task()
+  File ""/home/ssm-user/venv-locust/lib64/python3.12/site-packages/locust/user/task.py"", line 395, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File ""/home/ssm-user/venv-locust/lib64/python3.12/site-packages/locust/user/task.py"", line 512, in execute_task
+    task(self.user)
+  File ""/home/ssm-user/day18/locustfile.py"", line 172, in send_request
+    for chunk in resp.iter_lines():
+                 ^^^^^^^^^^^^^^^^^
+  File ""/home/ssm-user/venv-locust/lib64/python3.12/site-packages/requests/models.py"", line 871, in iter_lines
+    for chunk in self.iter_content(
+                 ^^^^^^^^^^^^^^^^^^
+  File ""/home/ssm-user/venv-locust/lib64/python3.12/site-packages/requests/models.py"", line 824, in generate
+    raise ChunkedEncodingError(e)
+",local

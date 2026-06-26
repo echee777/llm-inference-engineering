@@ -1,0 +1,216 @@
+========================================
+  Day 13: Prefix Caching Experiment
+  Fresh vLLM restart per syslen
+========================================
+
+########################################
+  RUN 1: CACHE OFF
+########################################
+
+================================================================
+  cache_off | syslen=100 | cache=--no-enable-prefix-caching
+================================================================
+  Starting vLLM with --no-enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=4473) INFO 03-20 16:50:56 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [100]
+==============================================================================================================
+
+-- System prompt length: 100 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen=  100 | hit=0% | TTFT p50=  537.5ms | p99=  543.4ms | E2E p99= 2395.5ms | tok/s= 217.7 | ok=40/40
+  syslen=  100 | hit=25% | TTFT p50=  539.9ms | p99=  542.9ms | E2E p99= 2400.0ms | tok/s= 217.2 | ok=40/40
+  syslen=  100 | hit=50% | TTFT p50=  541.8ms | p99=  547.5ms | E2E p99= 2407.9ms | tok/s= 216.6 | ok=40/40
+  syslen=  100 | hit=75% | TTFT p50=  541.7ms | p99=  549.6ms | E2E p99= 2411.8ms | tok/s= 216.4 | ok=40/40
+  syslen=  100 | hit=100% | TTFT p50=  545.3ms | p99=  551.6ms | E2E p99= 2415.4ms | tok/s= 215.7 | ok=40/40
+
+
+================================================================
+  cache_off | syslen=500 | cache=--no-enable-prefix-caching
+================================================================
+  Starting vLLM with --no-enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=4925) INFO 03-20 16:54:35 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [500]
+==============================================================================================================
+
+-- System prompt length: 500 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen=  500 | hit=0% | TTFT p50= 1184.7ms | p99= 2305.3ms | E2E p99= 4747.5ms | tok/s= 124.3 | ok=40/40
+  syslen=  500 | hit=25% | TTFT p50= 1207.3ms | p99= 2380.2ms | E2E p99= 4828.9ms | tok/s= 122.7 | ok=40/40
+  syslen=  500 | hit=50% | TTFT p50= 1220.1ms | p99= 2410.6ms | E2E p99= 4866.8ms | tok/s= 121.9 | ok=40/40
+  syslen=  500 | hit=75% | TTFT p50= 1220.7ms | p99= 2433.9ms | E2E p99= 4898.1ms | tok/s= 121.6 | ok=40/40
+  syslen=  500 | hit=100% | TTFT p50= 1223.1ms | p99= 2443.9ms | E2E p99= 4908.9ms | tok/s= 121.3 | ok=40/40
+
+
+================================================================
+  cache_off | syslen=1000 | cache=--no-enable-prefix-caching
+================================================================
+  Starting vLLM with --no-enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=5209) INFO 03-20 16:58:23 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [1000]
+==============================================================================================================
+
+-- System prompt length: 1000 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen= 1000 | hit=0% | TTFT p50= 2148.2ms | p99= 4762.2ms | E2E p99= 9337.4ms | tok/s=  77.9 | ok=40/40
+  syslen= 1000 | hit=25% | TTFT p50= 2195.1ms | p99= 4843.4ms | E2E p99= 9477.0ms | tok/s=  77.0 | ok=40/40
+  syslen= 1000 | hit=50% | TTFT p50= 2206.9ms | p99= 4876.4ms | E2E p99= 9530.2ms | tok/s=  76.8 | ok=40/40
+  syslen= 1000 | hit=75% | TTFT p50= 2207.8ms | p99= 4906.0ms | E2E p99= 9557.6ms | tok/s=  76.7 | ok=40/40
+  syslen= 1000 | hit=100% | TTFT p50= 2216.1ms | p99= 4917.3ms | E2E p99= 9586.0ms | tok/s=  76.7 | ok=40/40
+
+
+================================================================
+  cache_off | syslen=2000 | cache=--no-enable-prefix-caching
+================================================================
+  Starting vLLM with --no-enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=5496) INFO 03-20 17:03:28 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [2000]
+==============================================================================================================
+
+-- System prompt length: 2000 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen= 2000 | hit=0% | TTFT p50= 2845.9ms | p99= 9854.9ms | E2E p99=18931.1ms | tok/s=  44.0 | ok=40/40
+  syslen= 2000 | hit=25% | TTFT p50= 2894.9ms | p99=10140.7ms | E2E p99=19406.8ms | tok/s=  43.2 | ok=40/40
+  syslen= 2000 | hit=50% | TTFT p50= 2913.3ms | p99=10211.3ms | E2E p99=19514.5ms | tok/s=  43.0 | ok=40/40
+  syslen= 2000 | hit=75% | TTFT p50= 2918.4ms | p99=10239.1ms | E2E p99=19559.1ms | tok/s=  42.9 | ok=40/40
+  syslen= 2000 | hit=100% | TTFT p50= 2919.1ms | p99=10266.2ms | E2E p99=19596.9ms | tok/s=  42.9 | ok=40/40
+
+
+########################################
+  RUN 2: CACHE ON
+########################################
+
+================================================================
+  cache_on | syslen=100 | cache=--enable-prefix-caching
+================================================================
+  Starting vLLM with --enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=5932) INFO 03-20 17:11:15 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [100]
+==============================================================================================================
+
+-- System prompt length: 100 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen=  100 | hit=0% | TTFT p50=  542.9ms | p99=  548.1ms | E2E p99= 2409.2ms | tok/s= 216.3 | ok=40/40
+  syslen=  100 | hit=25% | TTFT p50=   98.9ms | p99=  100.8ms | E2E p99= 1964.7ms | tok/s= 265.9 | ok=40/40
+  syslen=  100 | hit=50% | TTFT p50=   96.5ms | p99=  100.6ms | E2E p99= 1965.0ms | tok/s= 266.1 | ok=40/40
+  syslen=  100 | hit=75% | TTFT p50=   94.6ms | p99=   99.5ms | E2E p99= 1964.5ms | tok/s= 266.4 | ok=40/40
+  syslen=  100 | hit=100% | TTFT p50=   93.3ms | p99=   97.7ms | E2E p99= 1955.3ms | tok/s= 266.8 | ok=40/40
+
+
+================================================================
+  cache_on | syslen=500 | cache=--enable-prefix-caching
+================================================================
+  Starting vLLM with --enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=6209) INFO 03-20 17:14:00 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [500]
+==============================================================================================================
+
+-- System prompt length: 500 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen=  500 | hit=0% | TTFT p50= 1194.6ms | p99= 2312.1ms | E2E p99= 4751.0ms | tok/s= 123.9 | ok=40/40
+  syslen=  500 | hit=25% | TTFT p50=  119.5ms | p99=  123.0ms | E2E p99= 2042.5ms | tok/s= 255.5 | ok=40/40
+  syslen=  500 | hit=50% | TTFT p50=  120.7ms | p99=  132.7ms | E2E p99= 2044.4ms | tok/s= 255.8 | ok=40/40
+  syslen=  500 | hit=75% | TTFT p50=  124.0ms | p99=  133.1ms | E2E p99= 2041.8ms | tok/s= 255.8 | ok=40/40
+  syslen=  500 | hit=100% | TTFT p50=  125.4ms | p99=  132.7ms | E2E p99= 2037.6ms | tok/s= 256.1 | ok=40/40
+
+
+================================================================
+  cache_on | syslen=1000 | cache=--enable-prefix-caching
+================================================================
+  Starting vLLM with --enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=6442) INFO 03-20 17:16:54 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [1000]
+==============================================================================================================
+
+-- System prompt length: 1000 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen= 1000 | hit=0% | TTFT p50= 2177.9ms | p99= 4865.2ms | E2E p99= 9497.8ms | tok/s=  77.2 | ok=40/40
+  syslen= 1000 | hit=25% | TTFT p50=  153.2ms | p99=  159.0ms | E2E p99= 2160.1ms | tok/s= 243.2 | ok=40/40
+  syslen= 1000 | hit=50% | TTFT p50=  157.9ms | p99=  161.4ms | E2E p99= 2161.9ms | tok/s= 244.1 | ok=40/40
+  syslen= 1000 | hit=75% | TTFT p50=  154.9ms | p99=  161.6ms | E2E p99= 2156.2ms | tok/s= 245.4 | ok=40/40
+  syslen= 1000 | hit=100% | TTFT p50=  150.2ms | p99=  157.7ms | E2E p99= 2111.7ms | tok/s= 247.3 | ok=40/40
+
+
+================================================================
+  cache_on | syslen=2000 | cache=--enable-prefix-caching
+================================================================
+  Starting vLLM with --enable-prefix-caching...
+  Waiting for vLLM to become ready...
+  vLLM ready.
+  Config: (APIServer pid=6720) INFO 03-20 17:20:05 [utils.py:238] non-default args: {'model': 'Qwen/Qwen2.5-3B-Instruct'
+  Running benchmark...
+==============================================================================================================
+Day 13: Prefix Caching Experiment - 6-Condition Design
+==============================================================================================================
+  Model: Qwen/Qwen2.5-3B-Instruct  |  Concurrency: 8  |  Output tokens: 64  |  Requests/condition: 40
+  System prompt lengths: [2000]
+==============================================================================================================
+
+-- System prompt length: 2000 tokens --
+  Condition   HitRatio |   TTFT p50 |   TTFT p99 |   E2E p99 |   tok/s | ok/total
+  -----------------------------------------------------------------------------------------------
+  syslen= 2000 | hit=0% | TTFT p50= 2847.6ms | p99=10001.9ms | E2E p99=19159.3ms | tok/s=  43.8 | ok=40/40
+  syslen= 2000 | hit=25% | TTFT p50=  226.4ms | p99=  238.1ms | E2E p99= 2382.6ms | tok/s= 221.4 | ok=40/40
+  syslen= 2000 | hit=50% | TTFT p50=  227.1ms | p99=  231.7ms | E2E p99= 2384.3ms | tok/s= 223.3 | ok=40/40
+  syslen= 2000 | hit=75% | TTFT p50=  226.3ms | p99=  240.5ms | E2E p99= 2372.0ms | tok/s= 225.8 | ok=40/40
+  syslen= 2000 | hit=100% | TTFT p50=  236.1ms | p99=  240.1ms | E2E p99= 2313.6ms | tok/s= 226.3 | ok=40/40
+
+
+========================================
+  DONE. All runs complete.
+========================================

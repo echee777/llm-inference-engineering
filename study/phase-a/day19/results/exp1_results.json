@@ -1,0 +1,170 @@
+{
+  "A": [
+    {
+      "name": "B_large_0",
+      "tenant": "B",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 2318.9,
+      "elapsed_s": 120.871,
+      "budget_before_pct": 0.0
+    },
+    {
+      "name": "A_short_0",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 2219.3,
+      "elapsed_s": 4.787,
+      "budget_before_pct": 73.0
+    },
+    {
+      "name": "A_short_1",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 2119.3,
+      "elapsed_s": 4.751,
+      "budget_before_pct": 74.4
+    },
+    {
+      "name": "A_short_2",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 2019.2,
+      "elapsed_s": 4.652,
+      "budget_before_pct": 75.8
+    },
+    {
+      "name": "A_short_3",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 1918.8,
+      "elapsed_s": 4.67,
+      "budget_before_pct": 77.2
+    },
+    {
+      "name": "A_short_4",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 1819.3,
+      "elapsed_s": 4.481,
+      "budget_before_pct": 78.7
+    }
+  ],
+  "B": [
+    {
+      "name": "A_short_0",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 68.7,
+      "elapsed_s": 3.178,
+      "budget_before_pct": 0.0
+    },
+    {
+      "name": "A_short_1",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 99.6,
+      "elapsed_s": 3.046,
+      "budget_before_pct": 1.4
+    },
+    {
+      "name": "A_short_2",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 92.5,
+      "elapsed_s": 2.853,
+      "budget_before_pct": 2.8
+    },
+    {
+      "name": "A_short_3",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 119.5,
+      "elapsed_s": 3.243,
+      "budget_before_pct": 4.2
+    },
+    {
+      "name": "A_short_4",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 130.6,
+      "elapsed_s": 3.234,
+      "budget_before_pct": 5.7
+    },
+    {
+      "name": "B_large_0",
+      "tenant": "B",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 139.7,
+      "elapsed_s": 118.87,
+      "budget_before_pct": 7.1
+    }
+  ],
+  "C": [
+    {
+      "name": "A_short_0",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 67.3,
+      "elapsed_s": 2.649,
+      "budget_before_pct": 0.0
+    },
+    {
+      "name": "B_large_0",
+      "tenant": "B",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 165.1,
+      "elapsed_s": 118.931,
+      "budget_before_pct": 1.4
+    },
+    {
+      "name": "A_short_1",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 121.2,
+      "elapsed_s": 2.762,
+      "budget_before_pct": 74.4
+    },
+    {
+      "name": "A_short_2",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 122.0,
+      "elapsed_s": 2.756,
+      "budget_before_pct": 75.8
+    },
+    {
+      "name": "A_short_3",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 124.2,
+      "elapsed_s": 3.053,
+      "budget_before_pct": 77.2
+    },
+    {
+      "name": "A_short_4",
+      "tenant": "A",
+      "status": 200,
+      "outcome": "admitted",
+      "ttft_ms": 115.0,
+      "elapsed_s": 2.8,
+      "budget_before_pct": 78.7
+    }
+  ]
+}

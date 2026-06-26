@@ -1,0 +1,90 @@
+[
+  {
+    "name": "LARGE_8K",
+    "status": 503,
+    "outcome": "rejected (queue timeout)",
+    "ttft_ms": null,
+    "total_s": 5.037,
+    "submit_time": 3276.89409629
+  },
+  {
+    "name": "SHORT_0",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 118.3,
+    "total_s": 2.752,
+    "submit_time": 3276.945130121
+  },
+  {
+    "name": "SHORT_1",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 113.7,
+    "total_s": 2.823,
+    "submit_time": 3276.965994884
+  },
+  {
+    "name": "SHORT_2",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 93.0,
+    "total_s": 2.59,
+    "submit_time": 3276.986541497
+  },
+  {
+    "name": "SHORT_3",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 116.3,
+    "total_s": 2.934,
+    "submit_time": 3277.005470071
+  },
+  {
+    "name": "SHORT_4",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 95.6,
+    "total_s": 2.943,
+    "submit_time": 3277.025544582
+  },
+  {
+    "name": "SHORT_5",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 132.4,
+    "total_s": 2.804,
+    "submit_time": 3277.045651041
+  },
+  {
+    "name": "SHORT_6",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 140.4,
+    "total_s": 2.874,
+    "submit_time": 3277.065653501
+  },
+  {
+    "name": "SHORT_7",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 120.5,
+    "total_s": 3.076,
+    "submit_time": 3277.084945425
+  },
+  {
+    "name": "SHORT_8",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 125.2,
+    "total_s": 2.622,
+    "submit_time": 3277.104878794
+  },
+  {
+    "name": "SHORT_9",
+    "status": 200,
+    "outcome": "admitted",
+    "ttft_ms": 105.2,
+    "total_s": 2.573,
+    "submit_time": 3277.124986554
+  }
+]
