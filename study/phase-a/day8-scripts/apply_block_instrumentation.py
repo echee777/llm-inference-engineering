@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 """
 Apply block instrumentation logging to pip-installed vLLM 0.17.1.
-Patches kv_cache_manager.py and scheduler.py with BLOCK_ALLOC/FREE/PREEMPT logs.
+
+What it does: patches vLLM V1's kv_cache_manager.py and scheduler.py in place so
+the engine emits one log line per KV-block event (BLOCK_ALLOC, BLOCK_ALLOC_FAIL,
+BLOCK_FREE, BLOCK_PREEMPT), each tagged with timestamp, request id, and
+free/total block counts. This is the measurement tool the rest of the residency
+depends on: it makes every allocation, free, and preemption observable so
+capacity and preemption behavior can be measured directly rather than inferred
+from aggregate metrics. See ../day8-work.md for the writeup and sample output.
 
 Usage:
-    python3 /tmp/apply_block_instrumentation.py /path/to/vllm/site-packages/vllm
+    # point it at your installed vLLM package directory (from `pip show vllm`):
+    python3 apply_block_instrumentation.py /path/to/site-packages/vllm
 """
 import sys
 import os

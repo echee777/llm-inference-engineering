@@ -1,4 +1,26 @@
-# gateway.py
+"""
+Day 16 admission-control gateway (FastAPI, sits in front of a vLLM server).
+
+What it does: gates incoming requests on a memory budget expressed in TOKENS, not a
+flat concurrency cap, because ten short requests and ten long ones are not the same
+load on the KV cache. It counts each request's prompt tokens with the model's own
+tokenizer (chat template applied), admits while the running total stays under the
+budget, and returns a real HTTP 429 with Retry-After when it would not. Admitted
+traffic is proxied to vLLM with byte-by-byte SSE streaming so latency is untouched.
+
+Honest limitation (see day16-work.md): the budget is an external proxy for KV usage.
+It cannot see prefix-cache hits, preemption, or the prefill/decode timing asymmetry,
+so it deliberately errs conservative. Day 17-18 quantify and partly correct this.
+
+How to run:
+    # 1. start a vLLM OpenAI-compatible server on port 8000 (separate terminal):
+    python -m vllm.entrypoints.openai.api_server \
+        --model Qwen/Qwen2.5-3B-Instruct --max-model-len 2048 --port 8000
+    # 2. start this gateway on port 8080:
+    uvicorn gateway:app --host 0.0.0.0 --port 8080
+    # 3. validate:
+    python smoke_test.py
+"""
 import asyncio
 import httpx
 from fastapi import FastAPI, Request
