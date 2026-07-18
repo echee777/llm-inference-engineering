@@ -38,12 +38,16 @@ MODELS = {
         "server_args": [],
     },
     "int8-awq": {
-        "model": "./day11/qwen2.5-3b-int8-awq",
+        # Local dir written by quantize_awq_int8.py (its OUTPUT_DIR). Run that
+        # script from this folder first, or point this at wherever you saved it.
+        "model": "./qwen2.5-3b-int8-awq",
         "quantization": "awq",
         "server_args": [],
     },
     "int4-gptq": {
-        "model": "/home/ssm-user/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GPTQ-Int4/snapshots/68c4276063d1496cdf13d0b8e8221f899bfa77f7",
+        # HF model id; vLLM resolves it from the local cache after
+        # download_gptq_int4.sh has fetched it.
+        "model": "Qwen/Qwen2.5-3B-Instruct-GPTQ-Int4",
         "quantization": "gptq",
         "server_args": [],
     },
