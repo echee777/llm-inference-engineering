@@ -1,3 +1,12 @@
+# Covers the admission-gateway experiments (Days 16-19) and the token counting
+# they rely on. The GPU experiments and analysis scripts have heavier, more
+# environment-specific deps that are intentionally NOT pinned here:
+#   - vLLM + a matching torch/CUDA build   (serving, most days)
+#   - llmcompressor, datasets              (Day 11 AWQ quantization)
+#   - huggingface_hub                      (Day 11 GPTQ download)
+#   - aiohttp                              (Day 24 cliff collector)
+#   - matplotlib, pandas                   (plotting, e.g. Day 24)
+# Each script's module docstring lists the exact pip line it needs.
 fastapi
 uvicorn
 httpx

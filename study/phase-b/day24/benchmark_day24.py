@@ -22,6 +22,24 @@ Per-point metrics captured:
   - Preemption rate (events/min)
   - KV utilization % (mean over sample window)
   - Throughput (output tok/s)
+
+How to run:
+    # 1. start vLLM with the KV pool constrained to surface the cliff (see
+    #    deliverable-7-cliff.md for why gpu_memory_utilization=0.60):
+    python -m vllm.entrypoints.openai.api_server \
+        --model Qwen/Qwen2.5-3B-Instruct --gpu-memory-utilization 0.60 \
+        --max-model-len 2048 --port 8000
+    # 2. sweep concurrency (only --concurrencies is required; --zone-repeats
+    #    re-runs points near the cliff for resolution):
+    python benchmark_day24.py --concurrencies 78,83,88,93,98,103,108,113,118,128,145 \
+        --zone-repeats 108,113,118
+    # 3. plot:
+    python plot_day24.py
+    # Expected: divergence ratio (TTFT p99/p50) crosses 2.0 at ~87% KV, p99
+    # jumping ~3,200 -> ~7,587 ms between c=108 and c=113. See the deliverable.
+
+Dependencies beyond study/phase-a/requirements.txt: aiohttp (this collector),
+plus matplotlib and pandas for plot_day24.py.
 """
 
 import argparse
