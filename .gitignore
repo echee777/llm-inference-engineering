@@ -7,6 +7,10 @@ __pycache__/
 
 # Personal, kept out of the public portfolio (uploaded separately)
 resumes/
+prep/
+
+# Editor config
+.vscode/
 
 # Raw run logs: large, regenerable noise. Findings live in the writeups.
 *.log
